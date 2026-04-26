@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-borcelle-red: #DA291C;
+  --color-borcelle-cream: #F7F0E6;
+  --color-borcelle-dark: #1A1A1A;
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-anton);
+}
+
+/* Base styles for smooth snap scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-borcelle-cream);
+  color: var(--color-borcelle-dark);
+}
+
+/* Custom scrollbar to make it invisible but keep functionality */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Esconder os créditos do MapLibreGL */
+.maplibregl-ctrl-attrib {
+  display: none !important;
+}
+
+/* Customizar o popup do MapLibre para aceitar estilos do Tailwind limpos */
+.maplibregl-popup-content {
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+.maplibregl-popup-tip {
+  border-top-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Custom Scrollbar for 5W2H table */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
