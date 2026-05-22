@@ -6,15 +6,10 @@ import { Volume2 } from "lucide-react";
 
 export function EndSlide() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [blocked, setBlocked] = useState(false);
 
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = 0.6; // Volume agradável
-      audioRef.current.play().catch((err) => {
-        console.log("Autoplay de áudio bloqueado:", err);
-        setBlocked(true);
-      });
     }
 
     return () => {
@@ -27,7 +22,7 @@ export function EndSlide() {
 
   return (
     <section className="h-full w-full relative bg-[#0a0a0a] flex flex-col items-center justify-center p-8 md:p-16 overflow-hidden">
-      <audio ref={audioRef} src="/images/Musica.mp3" loop />
+      <audio ref={audioRef} src="/images/Musica.mp3" autoPlay loop />
       {/* Luz muito sutil central */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[800px] h-[800px] bg-borcelle-red/5 rounded-full filter blur-[150px] mix-blend-screen" />
@@ -59,24 +54,6 @@ export function EndSlide() {
         >
           Obrigado pela atenção
         </motion.p>
-
-        {/* Botão de play caso o autoplay seja bloqueado */}
-        {blocked && (
-          <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            onClick={() => {
-              if (audioRef.current) {
-                audioRef.current.play();
-                setBlocked(false);
-              }
-            }}
-            className="mt-8 flex items-center gap-2 bg-borcelle-red/20 text-borcelle-red px-6 py-3 rounded-full hover:bg-borcelle-red/40 transition-colors border border-borcelle-red/30 z-30"
-          >
-            <Volume2 className="w-5 h-5" />
-            <span>Tocar Música de Fundo</span>
-          </motion.button>
-        )}
       </motion.div>
 
       {/* GIFs animando após o texto */}
