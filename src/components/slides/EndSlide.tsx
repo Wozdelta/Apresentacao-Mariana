@@ -9,19 +9,37 @@ export function EndSlide({ isActive }: { isActive?: boolean }) {
 
   useEffect(() => {
     if (!audioRef.current) return;
+    const audio = audioRef.current;
 
     if (isActive) {
-      audioRef.current.volume = 0.6;
-      audioRef.current.play().catch((err) => console.log("Autoplay bloqueado:", err));
+      audio.volume = 0.6;
+      const playPromise = audio.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Se o navegador bloquear, tenta forçar no próximo micro-movimento do usuário
+          const forcePlay = () => {
+            if (isActive) audio.play().catch(() => {});
+            window.removeEventListener('click', forcePlay);
+            window.removeEventListener('wheel', forcePlay);
+            window.removeEventListener('touchstart', forcePlay);
+            window.removeEventListener('keydown', forcePlay);
+          };
+          window.addEventListener('click', forcePlay, { once: true });
+          window.addEventListener('wheel', forcePlay, { once: true });
+          window.addEventListener('touchstart', forcePlay, { once: true });
+          window.addEventListener('keydown', forcePlay, { once: true });
+        });
+      }
     } else {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
+      audio.pause();
+      audio.currentTime = 0;
     }
   }, [isActive]);
 
   return (
     <section className="h-full w-full relative bg-[#0a0a0a] flex flex-col items-center justify-center p-8 md:p-16 overflow-hidden">
-      <audio ref={audioRef} src="/images/Musica.mp3" loop preload="auto" />
+      <audio ref={audioRef} src="/images/Musica.mp3" autoPlay loop preload="auto" />
       {/* Luz muito sutil central */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[800px] h-[800px] bg-borcelle-red/5 rounded-full filter blur-[150px] mix-blend-screen" />
