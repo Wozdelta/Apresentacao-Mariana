@@ -22,7 +22,7 @@ export function EndSlide() {
 
   return (
     <section className="h-full w-full relative bg-[#0a0a0a] flex flex-col items-center justify-center p-8 md:p-16 overflow-hidden">
-      <audio ref={audioRef} src="/images/musica.mp3" loop />
+      <audio ref={audioRef} src="/images/Musica.mp3" loop />
       {/* Luz muito sutil central */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[800px] h-[800px] bg-borcelle-red/5 rounded-full filter blur-[150px] mix-blend-screen" />
