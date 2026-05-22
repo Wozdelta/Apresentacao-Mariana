@@ -115,7 +115,7 @@ export default function Home() {
         key={index} 
         className={`absolute inset-0 w-full h-full transition-opacity duration-300 ${isActive ? 'z-10 opacity-100 pointer-events-auto' : 'z-0 opacity-100 pointer-events-none'}`}
       >
-        <Component onStartJourney={index === 1 ? () => triggerTransition(2, "forward") : undefined} />
+        <Component isActive={isActive} onStartJourney={index === 1 ? () => triggerTransition(2, "forward") : undefined} />
       </div>
     );
   };

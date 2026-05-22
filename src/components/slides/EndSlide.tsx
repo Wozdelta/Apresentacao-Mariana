@@ -4,25 +4,24 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Volume2 } from "lucide-react";
 
-export function EndSlide() {
+export function EndSlide({ isActive }: { isActive?: boolean }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = 0.6; // Volume agradável
-    }
+    if (!audioRef.current) return;
 
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
-      }
-    };
-  }, []);
+    if (isActive) {
+      audioRef.current.volume = 0.6;
+      audioRef.current.play().catch((err) => console.log("Autoplay bloqueado:", err));
+    } else {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+  }, [isActive]);
 
   return (
     <section className="h-full w-full relative bg-[#0a0a0a] flex flex-col items-center justify-center p-8 md:p-16 overflow-hidden">
-      <audio ref={audioRef} src="/images/Musica.mp3" autoPlay loop />
+      <audio ref={audioRef} src="/images/Musica.mp3" loop preload="auto" />
       {/* Luz muito sutil central */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[800px] h-[800px] bg-borcelle-red/5 rounded-full filter blur-[150px] mix-blend-screen" />
