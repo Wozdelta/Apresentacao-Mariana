@@ -8,6 +8,8 @@ import { ImagerySlide } from "@/components/slides/ImagerySlide";
 import { RulesSlide } from "@/components/slides/RulesSlide";
 import { ExecuteSlide } from "@/components/slides/ExecuteSlide";
 import { FinalSlide } from "@/components/slides/FinalSlide";
+import { ConclusionSlide } from "@/components/slides/ConclusionSlide";
+import { EndSlide } from "@/components/slides/EndSlide";
 
 // We will import transition components later. For now, we stub them.
 import { PlaneTransition } from "@/components/transitions/PlaneTransition";
@@ -15,6 +17,9 @@ import { ExecuteToFinalTransition } from "@/components/transitions/ExecuteToFina
 import { HeroToMissionTransition } from "@/components/transitions/HeroToMissionTransition";
 import { LogoToImageryTransition } from "@/components/transitions/LogoToImageryTransition";
 import { ImageryToRulesTransition } from "@/components/transitions/ImageryToRulesTransition";
+import { RulesToExecuteTransition } from "@/components/transitions/RulesToExecuteTransition";
+import { FinalToConclusionTransition } from "@/components/transitions/FinalToConclusionTransition";
+import { ConclusionToEndTransition } from "@/components/transitions/ConclusionToEndTransition";
 import { BackwardTransition } from "@/components/transitions/BackwardTransition";
 
 export default function Home() {
@@ -24,7 +29,7 @@ export default function Home() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [transitionDirection, setTransitionDirection] = useState<"forward" | "backward" | null>(null);
 
-  const totalSlides = 7;
+  const totalSlides = 9;
   const lastScrollTime = useRef(0);
 
   // Lida com o scroll nativo (trackpad/mouse)
@@ -126,6 +131,8 @@ export default function Home() {
         {renderSlide(4, RulesSlide)}
         {renderSlide(5, ExecuteSlide)}
         {renderSlide(6, FinalSlide)}
+        {renderSlide(7, ConclusionSlide)}
+        {renderSlide(8, EndSlide)}
       </div>
 
       {/* Orchestrator Transições Forward */}
@@ -144,10 +151,16 @@ export default function Home() {
             <ImageryToRulesTransition onHalfway={onTransitionHalfway} onComplete={onTransitionComplete} />
           )}
           {transitionStartIndex === 4 && (
-            <PlaneTransition isTriggered={true} onHalfway={onTransitionHalfway} onComplete={onTransitionComplete} />
+            <RulesToExecuteTransition onHalfway={onTransitionHalfway} onComplete={onTransitionComplete} />
           )}
           {transitionStartIndex === 5 && (
             <ExecuteToFinalTransition onHalfway={onTransitionHalfway} onComplete={onTransitionComplete} />
+          )}
+          {transitionStartIndex === 6 && (
+            <FinalToConclusionTransition onHalfway={onTransitionHalfway} onComplete={onTransitionComplete} />
+          )}
+          {transitionStartIndex === 7 && (
+            <ConclusionToEndTransition onHalfway={onTransitionHalfway} onComplete={onTransitionComplete} />
           )}
         </>
       )}

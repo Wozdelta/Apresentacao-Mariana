@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-borcelle-red: #DA291C;
-  --color-borcelle-cream: #F7F0E6;
-  --color-borcelle-dark: #1A1A1A;
+  --color-borcelle-red: #b71c1c;
+  --color-borcelle-cream: #fdfbfb;
+  --color-borcelle-dark: #1b0f0d;
   --font-sans: var(--font-inter);
   --font-display: var(--font-anton);
 }

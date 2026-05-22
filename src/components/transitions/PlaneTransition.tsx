@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Plane } from "lucide-react";
+import { ChefHat } from "lucide-react";
 
 interface PlaneTransitionProps {
   isTriggered: boolean;
@@ -52,7 +52,7 @@ export function PlaneTransition({ isTriggered, onHalfway, onComplete }: PlaneTra
             onAnimationComplete={onComplete}
           />
 
-          {/* O Avião cortando a tela (PARA BAIXO) */}
+          {/* O ícone descendo pela tela */}
           <motion.div
             className="absolute left-1/2 -translate-x-1/2 z-10 flex justify-center"
             initial={{ y: "-50vh", opacity: 0, scale: 0.5 }}
@@ -67,20 +67,9 @@ export function PlaneTransition({ isTriggered, onHalfway, onComplete }: PlaneTra
               delay: 0.15 
             }}
           >
-            <Plane 
+            <ChefHat 
               className="w-32 h-32 relative z-10 text-white/90 drop-shadow-[0_0_30px_rgba(255,255,255,0.4)]" 
               strokeWidth={1.5}
-              fill="currentColor"
-              style={{ transform: "rotate(135deg)" }} 
-            />
-            
-            {/* Rastro do avião (Trail - Crescendo para CIMA enquanto o avião desce) */}
-            <motion.div 
-              className="absolute bottom-1/2 w-1 bg-gradient-to-b from-transparent to-white/30 rounded-full blur-sm"
-              style={{ originY: 1 }} // transform origin is bottom
-              initial={{ height: 0 }}
-              animate={{ height: 256 }}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
             />
           </motion.div>
         </motion.div>

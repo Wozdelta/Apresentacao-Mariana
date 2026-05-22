@@ -2,37 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Logo } from "../Logo";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Building2, User } from "lucide-react";
 
 export function RulesSlide() {
-  const timeline = [
-    {
-      period: "Fase 1",
-      title: "Pesquisa & Planejamento",
-      description: "Escolha da cidade (Dublin), agência e escola de inglês. Definição do orçamento total necessário para o projeto."
-    },
-    {
-      period: "Fase 2",
-      title: "Organização Financeira",
-      description: "Quitação do intercâmbio, compra gradual de euros e montagem da comprovação financeira exigida pelo governo irlandês."
-    },
-    {
-      period: "Fase 3",
-      title: "Documentação & Passagens",
-      description: "Emissão de passaporte, fechamento do seguro saúde governamental e compra das passagens aéreas de ida."
-    },
-    {
-      period: "Fase 4",
-      title: "Embarque & Chegada",
-      description: "Despedidas da família e amigos, voo para a Irlanda e chegada na acomodação temporária."
-    },
-    {
-      period: "Fase 5",
-      title: "Estabelecimento",
-      description: "Tirar o visto de estudante (IRP/GNIB), emissão do PPS Number, alugar acomodação definitiva e buscar emprego."
-    }
-  ];
-
   const containerVariants: any = {
     hidden: { opacity: 0 },
     show: {
@@ -49,7 +21,10 @@ export function RulesSlide() {
   return (
     <section className="h-full w-full relative overflow-hidden flex flex-col md:flex-row bg-borcelle-cream">
       {/* Left Content Half */}
-      <div className="w-full md:w-[40%] bg-borcelle-red flex flex-col p-8 md:p-16 h-full justify-between z-10 shadow-2xl">
+      <div className="w-full md:w-[40%] bg-gradient-to-br from-borcelle-red to-[#7f1111] flex flex-col p-8 md:p-16 h-full justify-between z-10 shadow-2xl relative overflow-hidden">
+        {/* Background orb */}
+        <div className="absolute top-[-20%] left-[-20%] w-[400px] h-[400px] bg-white/10 rounded-full blur-[100px] pointer-events-none mix-blend-screen z-0"></div>
+        <div className="absolute bottom-[-10%] right-[-20%] w-[300px] h-[300px] bg-black/20 rounded-full blur-[100px] pointer-events-none z-0"></div>
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -64,9 +39,9 @@ export function RulesSlide() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
-            <h2 className="font-display text-7xl md:text-8xl text-borcelle-cream mb-6 tracking-tight leading-none drop-shadow-sm">Cronograma</h2>
+            <h2 className="font-display text-5xl md:text-7xl text-borcelle-cream mb-6 tracking-tight leading-none drop-shadow-sm">Responsabilidades</h2>
             <p className="text-xl text-borcelle-cream/90 leading-relaxed font-medium mb-12">
-              A jornada para a Irlanda não acontece da noite para o dia. Este é o mapa visual das etapas necessárias para transformar esse objetivo em realidade, desde o primeiro planejamento até o momento de pisar em solo europeu.
+              A ergonomia não é uma via de mão única. Para que o ambiente da Bouche Nerveuse seja seguro e produtivo, há deveres para ambas as partes.
             </p>
           </motion.div>
 
@@ -77,51 +52,86 @@ export function RulesSlide() {
           >
             <p className="text-borcelle-cream font-bold text-xl leading-snug flex items-start gap-3">
               <CheckCircle2 className="w-6 h-6 mt-1 shrink-0" />
-              <span>Cada etapa concluída é um passo mais perto do destino final.</span>
+              <span>O sucesso da ergonomia depende da colaboração entre empresa e equipe.</span>
             </p>
           </motion.div>
         </div>
 
         <motion.p
-          className="text-sm font-medium tracking-widest text-borcelle-cream/70 mt-auto hidden md:block"
+          className="text-sm font-medium tracking-widest text-borcelle-cream/70 mt-auto hidden md:block uppercase"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          PROJETO IRLANDA
+          NR 17 - DEVERES
         </motion.p>
       </div>
 
-      {/* Right Timeline Half */}
-      <div className="w-full md:w-[60%] bg-borcelle-cream h-full flex flex-col p-4 md:p-8 justify-center overflow-y-auto custom-scrollbar">
+      {/* Right Split Half */}
+      <div className="w-full md:w-[60%] bg-borcelle-cream h-full flex flex-col items-center justify-center p-4 md:p-12 overflow-y-auto">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          className="max-w-2xl mx-auto w-full relative py-2"
+          className="flex flex-col gap-6 w-full max-w-2xl my-auto"
         >
-          {/* Linha vertical central/esquerda */}
-          <div className="absolute left-3 md:left-5 top-8 bottom-8 w-1 bg-borcelle-red/20 rounded-full" />
+          {/* Empresa */}
+          <motion.div variants={itemVariants} className="bg-white p-6 md:p-8 rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-zinc-200 flex flex-col hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 rounded-full bg-borcelle-red/10 flex items-center justify-center border border-borcelle-red/20">
+                <Building2 className="w-6 h-6 text-borcelle-red" />
+              </div>
+              <h3 className="font-display text-3xl text-borcelle-dark">A Empresa</h3>
+            </div>
+            <ul className="space-y-4 text-zinc-600 font-medium">
+              <li className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-borcelle-red mt-2 shrink-0" />
+                <p>Fornecer mobiliário adequado (bancadas ajustáveis, cadeiras ergonômicas).</p>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-borcelle-red mt-2 shrink-0" />
+                <p>Garantir iluminação e temperatura confortáveis na cozinha.</p>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-borcelle-red mt-2 shrink-0" />
+                <p>Implementar pausas regulares para descanso.</p>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-borcelle-red mt-2 shrink-0" />
+                <p>Realizar a Análise Ergonômica do Trabalho (AET).</p>
+              </li>
+            </ul>
+          </motion.div>
 
-          <div className="flex flex-col gap-4">
-            {timeline.map((item, idx) => (
-              <motion.div key={idx} variants={itemVariants} className="relative pl-12 md:pl-16">
-                {/* Ponto na linha */}
-                <div className="absolute left-[14px] md:left-[22px] top-[20px] w-4 h-4 bg-borcelle-red rounded-full shadow-[0_0_15px_rgba(204,32,39,0.5)] z-10 transform -translate-x-1/2 ring-4 ring-white" />
-                
-                {/* Conteúdo do Card */}
-                <div className="bg-white p-4 md:p-5 rounded-2xl shadow-xl shadow-black/5 border border-zinc-100 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/10 transition-all duration-300">
-                  <span className="inline-block px-3 py-1 bg-borcelle-red/10 text-borcelle-red font-bold text-[10px] rounded-full mb-2 tracking-widest uppercase">
-                    {item.period}
-                  </span>
-                  <h4 className="text-borcelle-dark font-display text-xl md:text-2xl mb-1.5">{item.title}</h4>
-                  <p className="text-zinc-500 leading-relaxed text-xs md:text-sm">
-                    {item.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {/* Colaborador */}
+          <motion.div variants={itemVariants} className="bg-borcelle-dark p-6 md:p-8 rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.1)] border border-zinc-800 flex flex-col hover:shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-white/5 rounded-full blur-[80px] pointer-events-none mix-blend-screen z-0"></div>
+            <div className="flex items-center gap-4 mb-6 relative z-10">
+              <div className="w-12 h-12 rounded-full bg-borcelle-cream/10 flex items-center justify-center border border-white/10">
+                <User className="w-6 h-6 text-borcelle-cream" />
+              </div>
+              <h3 className="font-display text-3xl text-borcelle-cream">O Colaborador</h3>
+            </div>
+            <ul className="space-y-4 text-zinc-400 font-medium">
+              <li className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-borcelle-cream mt-2 shrink-0" />
+                <p>Utilizar corretamente os equipamentos fornecidos.</p>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-borcelle-cream mt-2 shrink-0" />
+                <p>Participar dos treinamentos oferecidos sobre ergonomia.</p>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-borcelle-cream mt-2 shrink-0" />
+                <p>Informar imediatamente qualquer desconforto ou dor constante.</p>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-borcelle-cream mt-2 shrink-0" />
+                <p>Adotar as posturas ensinadas durante o preparo dos doces.</p>
+              </li>
+            </ul>
+          </motion.div>
+
         </motion.div>
       </div>
     </section>

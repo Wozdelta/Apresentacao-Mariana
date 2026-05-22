@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Logo } from "../Logo";
 import Image from "next/image";
-import { Plane } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 interface MissionSlideProps {
@@ -29,22 +28,22 @@ export function MissionSlide({ onStartJourney }: MissionSlideProps) {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
-            <h2 className="font-display text-7xl md:text-8xl text-borcelle-dark mb-6 tracking-tight">Definições</h2>
+            <h2 className="font-display text-5xl md:text-7xl text-borcelle-dark mb-6 tracking-tight leading-none">O que é a<br/>NR 17?</h2>
             <p className="text-xl text-zinc-500 leading-relaxed font-medium">
-              As escolhas que utilizei para a construção desta apresentação.
+              Conhecendo a Norma Regulamentadora de Ergonomia.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-8">
+          <div className="grid grid-cols-1 gap-10 mt-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
             >
               <h3 className="font-display text-5xl text-borcelle-red mb-4">01.</h3>
-              <h4 className="text-xl font-bold text-borcelle-dark mb-3">Pessoal ou Profissional?</h4>
+              <h4 className="text-xl font-bold text-borcelle-dark mb-3">Conceito Principal</h4>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                Pessoal, pois esta apresentação representa um objetivo de vida meu e um planejamento voltado para meu futuro.
+                A NR 17 estabelece os parâmetros para a adaptação das condições de trabalho às características psicofisiológicas dos trabalhadores, visando segurança, conforto e desempenho.
               </p>
             </motion.div>
 
@@ -54,9 +53,9 @@ export function MissionSlide({ onStartJourney }: MissionSlideProps) {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
             >
               <h3 className="font-display text-5xl text-borcelle-red mb-4">02.</h3>
-              <h4 className="text-xl font-bold text-borcelle-dark mb-3">Meta</h4>
+              <h4 className="text-xl font-bold text-borcelle-dark mb-3">Aplicação Prática</h4>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                Morar na Irlanda com planejamento financeiro e profissional.
+                Na confeitaria Bouche Nerveuse, a ergonomia busca otimizar as bancadas de preparo, os equipamentos e as posturas, evitando fadiga e lesões nos nossos talentosos confeiteiros.
               </p>
             </motion.div>
           </div>
@@ -64,11 +63,12 @@ export function MissionSlide({ onStartJourney }: MissionSlideProps) {
         </div>
 
         <motion.p
-          className="text-sm font-medium tracking-widest text-zinc-400 mt-auto hidden md:block"
+          className="text-sm font-medium tracking-widest text-zinc-400 mt-auto hidden md:block uppercase"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
+          Bouche Nerveuse
         </motion.p>
       </div>
 
@@ -80,8 +80,8 @@ export function MissionSlide({ onStartJourney }: MissionSlideProps) {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <Image
-          src="/images/viagem.jpg"
-          alt="Viagem para a Irlanda"
+          src="/images/bakery_1.png"
+          alt="Confeiteiro trabalhando com ergonomia"
           fill
           className="object-cover"
           priority
