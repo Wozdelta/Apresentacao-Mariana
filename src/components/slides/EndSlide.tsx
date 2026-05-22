@@ -1,15 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Volume2 } from "lucide-react";
 
 export function EndSlide() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [blocked, setBlocked] = useState(false);
 
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = 0.6; // Volume agradável
-      audioRef.current.play().catch((err) => console.log("Autoplay de áudio bloqueado:", err));
+      audioRef.current.play().catch((err) => {
+        console.log("Autoplay de áudio bloqueado:", err);
+        setBlocked(true);
+      });
     }
 
     return () => {
@@ -54,6 +59,24 @@ export function EndSlide() {
         >
           Obrigado pela atenção
         </motion.p>
+
+        {/* Botão de play caso o autoplay seja bloqueado */}
+        {blocked && (
+          <motion.button
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            onClick={() => {
+              if (audioRef.current) {
+                audioRef.current.play();
+                setBlocked(false);
+              }
+            }}
+            className="mt-8 flex items-center gap-2 bg-borcelle-red/20 text-borcelle-red px-6 py-3 rounded-full hover:bg-borcelle-red/40 transition-colors border border-borcelle-red/30 z-30"
+          >
+            <Volume2 className="w-5 h-5" />
+            <span>Tocar Música de Fundo</span>
+          </motion.button>
+        )}
       </motion.div>
 
       {/* GIFs animando após o texto */}
