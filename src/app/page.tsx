@@ -74,14 +74,29 @@ export default function Home() {
       }
     };
 
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const now = Date.now();
+      if (isTransitioning || now - lastScrollTime.current < 1500) return;
+
+      if ((e.key === "ArrowDown" || e.key === "ArrowRight" || e.key === " ") && activeSlideIndex < totalSlides - 1) {
+        lastScrollTime.current = now;
+        triggerTransition(activeSlideIndex + 1, "forward");
+      } else if ((e.key === "ArrowUp" || e.key === "ArrowLeft") && activeSlideIndex > 0) {
+        lastScrollTime.current = now;
+        triggerTransition(activeSlideIndex - 1, "backward");
+      }
+    };
+
     window.addEventListener("wheel", handleWheel, { passive: true });
     window.addEventListener("touchstart", handleTouchStart, { passive: true });
     window.addEventListener("touchmove", handleTouchMove, { passive: true });
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
       window.removeEventListener("wheel", handleWheel);
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [activeSlideIndex, isTransitioning]);
 
