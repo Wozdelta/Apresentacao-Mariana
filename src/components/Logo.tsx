@@ -1,22 +1,4 @@
 export function Logo({ color = "red" }: { color?: "red" | "cream" | "dark" | "white" }) {
-  const textColor = {
-    red: "text-borcelle-red",
-    cream: "text-borcelle-cream",
-    dark: "text-borcelle-dark",
-  }[color];
-
-  const bgColor = {
-    red: "bg-borcelle-red",
-    cream: "bg-borcelle-cream",
-    dark: "bg-borcelle-dark",
-  }[color];
-
-  const iconColor = {
-    red: "text-white",
-    cream: "text-borcelle-red",
-    dark: "text-white",
-  }[color];
-
   const fillColor = color === "cream" ? "#F7F0E6" : color === "dark" ? "#1A1A1A" : color === "white" ? "transparent" : "#b71c1c";
   const contrastColor = color === "cream" ? "#b71c1c" : color === "white" ? "#FFFFFF" : "#FFFFFF";
 
