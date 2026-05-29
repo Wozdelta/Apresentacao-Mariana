@@ -37,7 +37,7 @@ export function LogoSlide() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <h2 className="font-display text-5xl md:text-7xl text-borcelle-dark mb-6 tracking-tight leading-none">Objetivo da<br/>Norma</h2>
-            <p className="text-xl text-zinc-500 leading-relaxed font-medium mb-10">
+            <p className="text-2xl text-zinc-500 leading-relaxed font-medium mb-10">
               Por que a ergonomia é tão crucial para o ambiente de trabalho?
             </p>
           </motion.div>
@@ -47,7 +47,7 @@ export function LogoSlide() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           >
-            <p className="text-borcelle-red font-bold text-xl leading-snug mb-6">
+            <p className="text-borcelle-red font-bold text-2xl leading-snug mb-6">
               O objetivo principal da NR 17 é prevenir acidentes e doenças relacionadas ao trabalho (como LER e DORT), adaptando o ambiente ao trabalhador, e não o oposto.
             </p>
             <div className="h-px bg-zinc-200 w-full mb-6"></div>
@@ -63,7 +63,7 @@ export function LogoSlide() {
         </div>
 
         <motion.p
-          className="text-sm font-medium tracking-widest text-zinc-400 mt-auto hidden md:block"
+          className="text-lg font-medium tracking-widest text-zinc-400 mt-auto hidden md:block"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -89,7 +89,7 @@ export function LogoSlide() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-borcelle-dark/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <p className="text-white font-bold tracking-wide text-lg mb-1">Ambiente Adaptado</p>
-              <p className="text-zinc-300 text-sm font-medium">Tapetes antifadiga e organização otimizada.</p>
+              <p className="text-zinc-300 text-lg font-medium">Tapetes antifadiga e organização otimizada.</p>
             </div>
         </motion.div>
 
@@ -103,7 +103,7 @@ export function LogoSlide() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-borcelle-red/90 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <p className="text-white font-bold tracking-wide text-lg mb-1">Conforto no Preparo</p>
-              <p className="text-white/80 text-sm font-medium">Equipamentos ajustados para evitar esforços repetitivos nocivos.</p>
+              <p className="text-white/80 text-lg font-medium">Equipamentos ajustados para evitar esforços repetitivos nocivos.</p>
             </div>
         </motion.div>
       </motion.div>

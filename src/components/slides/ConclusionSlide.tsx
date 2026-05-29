@@ -28,7 +28,7 @@ export function ConclusionSlide() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="text-zinc-400 text-xl md:text-2xl font-medium leading-relaxed mb-12"
+          className="text-zinc-400 text-2xl md:text-3xl font-medium leading-relaxed mb-12"
         >
           A ergonomia vai além da obrigação legal. Na Bouche Nerveuse, o cuidado com a postura e a saúde da equipe é o ingrediente secreto para bolos feitos com perfeição, funcionários felizes e uma marca forte.
         </motion.p>

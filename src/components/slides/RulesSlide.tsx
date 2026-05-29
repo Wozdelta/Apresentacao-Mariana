@@ -40,7 +40,7 @@ export function RulesSlide() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <h2 className="font-display text-5xl md:text-7xl text-borcelle-cream mb-6 tracking-tight leading-none drop-shadow-sm">Responsabilidades</h2>
-            <p className="text-xl text-borcelle-cream/90 leading-relaxed font-medium mb-12">
+            <p className="text-2xl text-borcelle-cream/90 leading-relaxed font-medium mb-12">
               A ergonomia não é uma via de mão única. Para que o ambiente da Bouche Nerveuse seja seguro e produtivo, há deveres para ambas as partes.
             </p>
           </motion.div>
@@ -50,7 +50,7 @@ export function RulesSlide() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           >
-            <p className="text-borcelle-cream font-bold text-xl leading-snug flex items-start gap-3">
+            <p className="text-borcelle-cream font-bold text-2xl leading-snug flex items-start gap-3">
               <CheckCircle2 className="w-6 h-6 mt-1 shrink-0" />
               <span>O sucesso da ergonomia depende da colaboração entre empresa e equipe.</span>
             </p>
@@ -58,7 +58,7 @@ export function RulesSlide() {
         </div>
 
         <motion.p
-          className="text-sm font-medium tracking-widest text-borcelle-cream/70 mt-auto hidden md:block uppercase"
+          className="text-lg font-medium tracking-widest text-borcelle-cream/70 mt-auto hidden md:block uppercase"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -81,11 +81,11 @@ export function RulesSlide() {
               <div className="w-12 h-12 rounded-full bg-borcelle-red/10 flex items-center justify-center border border-borcelle-red/20">
                 <Building2 className="w-6 h-6 text-borcelle-red" />
               </div>
-              <h3 className="font-display text-3xl text-borcelle-dark">A Empresa</h3>
+              <h3 className="font-display text-4xl text-borcelle-dark">A Empresa</h3>
             </div>
-            <ul className="space-y-4 text-zinc-600 font-medium">
+            <ul className="space-y-4 text-zinc-600 font-medium text-lg">
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-borcelle-red mt-2 shrink-0" />
+                <div className="w-2 h-2 rounded-full bg-borcelle-red mt-2 shrink-0" />
                 <p>Fornecer mobiliário adequado (bancadas ajustáveis, cadeiras ergonômicas).</p>
               </li>
               <li className="flex items-start gap-3">
@@ -110,11 +110,11 @@ export function RulesSlide() {
               <div className="w-12 h-12 rounded-full bg-borcelle-cream/10 flex items-center justify-center border border-white/10">
                 <User className="w-6 h-6 text-borcelle-cream" />
               </div>
-              <h3 className="font-display text-3xl text-borcelle-cream">O Colaborador</h3>
+              <h3 className="font-display text-4xl text-borcelle-cream">O Colaborador</h3>
             </div>
-            <ul className="space-y-4 text-zinc-400 font-medium">
+            <ul className="space-y-4 text-zinc-400 font-medium text-lg">
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-borcelle-cream mt-2 shrink-0" />
+                <div className="w-2 h-2 rounded-full bg-borcelle-cream mt-2 shrink-0" />
                 <p>Utilizar corretamente os equipamentos fornecidos.</p>
               </li>
               <li className="flex items-start gap-3">

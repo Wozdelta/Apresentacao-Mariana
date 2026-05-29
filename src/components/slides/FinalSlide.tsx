@@ -35,7 +35,7 @@ export function FinalSlide() {
         <h2 className="font-display text-5xl md:text-7xl leading-none text-borcelle-cream tracking-normal drop-shadow-lg mb-4">
           Consequências Trabalhistas
         </h2>
-        <p className="text-borcelle-cream/80 text-lg md:text-xl font-medium max-w-2xl mx-auto">
+        <p className="text-borcelle-cream/80 text-xl md:text-2xl font-medium max-w-2xl mx-auto">
           O que acontece se a Bouche Nerveuse ignorar a NR 17?
         </p>
       </motion.div>
@@ -51,8 +51,8 @@ export function FinalSlide() {
             <Gavel className="w-8 h-8 text-borcelle-red group-hover:drop-shadow-[0_0_10px_rgba(183,28,28,0.5)]" />
           </div>
           <div className="mt-1">
-            <h3 className="text-borcelle-cream font-bold text-xl mb-2 group-hover:text-white transition-colors">Multas e Processos</h3>
-            <p className="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300">Infrações de segurança do trabalho geram pesadas multas do Ministério do Trabalho e processos por danos morais e materiais.</p>
+            <h3 className="text-borcelle-cream font-bold text-2xl mb-2 group-hover:text-white transition-colors">Multas e Processos</h3>
+            <p className="text-zinc-400 text-lg leading-relaxed group-hover:text-zinc-300">Infrações de segurança do trabalho geram pesadas multas do Ministério do Trabalho e processos por danos morais e materiais.</p>
           </div>
         </motion.div>
 
@@ -61,8 +61,8 @@ export function FinalSlide() {
             <Stethoscope className="w-8 h-8 text-borcelle-red group-hover:drop-shadow-[0_0_10px_rgba(183,28,28,0.5)]" />
           </div>
           <div className="mt-1">
-            <h3 className="text-borcelle-cream font-bold text-xl mb-2 group-hover:text-white transition-colors">Adoecimento (LER/DORT)</h3>
-            <p className="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300">Lesões por Esforço Repetitivo são comuns na confeitaria sem ergonomia, causando dor crônica aos funcionários.</p>
+            <h3 className="text-borcelle-cream font-bold text-2xl mb-2 group-hover:text-white transition-colors">Adoecimento (LER/DORT)</h3>
+            <p className="text-zinc-400 text-lg leading-relaxed group-hover:text-zinc-300">Lesões por Esforço Repetitivo são comuns na confeitaria sem ergonomia, causando dor crônica aos funcionários.</p>
           </div>
         </motion.div>
 
@@ -71,8 +71,8 @@ export function FinalSlide() {
             <TrendingDown className="w-8 h-8 text-borcelle-red group-hover:drop-shadow-[0_0_10px_rgba(183,28,28,0.5)]" />
           </div>
           <div className="mt-1">
-            <h3 className="text-borcelle-cream font-bold text-xl mb-2 group-hover:text-white transition-colors">Queda na Produtividade</h3>
-            <p className="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300">Funcionários com dor ou cansados produzem menos, erram mais as receitas e perdem o foco na qualidade.</p>
+            <h3 className="text-borcelle-cream font-bold text-2xl mb-2 group-hover:text-white transition-colors">Queda na Produtividade</h3>
+            <p className="text-zinc-400 text-lg leading-relaxed group-hover:text-zinc-300">Funcionários com dor ou cansados produzem menos, erram mais as receitas e perdem o foco na qualidade.</p>
           </div>
         </motion.div>
 
@@ -81,8 +81,8 @@ export function FinalSlide() {
             <AlertTriangle className="w-8 h-8 text-borcelle-red group-hover:drop-shadow-[0_0_10px_rgba(183,28,28,0.5)]" />
           </div>
           <div className="mt-1">
-            <h3 className="text-borcelle-cream font-bold text-xl mb-2 group-hover:text-white transition-colors">Alto Turnover</h3>
-            <p className="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300">O ambiente desgastante faz com que os talentos peçam demissão rapidamente, aumentando os custos de rescisão e contratação.</p>
+            <h3 className="text-borcelle-cream font-bold text-2xl mb-2 group-hover:text-white transition-colors">Alto Turnover</h3>
+            <p className="text-zinc-400 text-lg leading-relaxed group-hover:text-zinc-300">O ambiente desgastante faz com que os talentos peçam demissão rapidamente, aumentando os custos de rescisão e contratação.</p>
           </div>
         </motion.div>
       </motion.div>

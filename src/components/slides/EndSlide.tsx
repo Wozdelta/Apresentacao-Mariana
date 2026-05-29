@@ -67,7 +67,7 @@ export function EndSlide({ isActive }: { isActive?: boolean }) {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="text-zinc-500 text-sm md:text-base font-medium mt-12 uppercase tracking-[0.3em]"
+          className="text-lg md:text-xl font-medium mt-12 uppercase tracking-[0.3em]"
         >
           Obrigado pela atenção
         </motion.p>

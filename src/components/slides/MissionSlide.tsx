@@ -29,7 +29,7 @@ export function MissionSlide({ onStartJourney }: MissionSlideProps) {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <h2 className="font-display text-5xl md:text-7xl text-borcelle-dark mb-6 tracking-tight leading-none">O que é a<br/>NR 17?</h2>
-            <p className="text-xl text-zinc-500 leading-relaxed font-medium">
+            <p className="text-2xl text-zinc-500 leading-relaxed font-medium">
               Conhecendo a Norma Regulamentadora de Ergonomia.
             </p>
           </motion.div>
@@ -41,8 +41,8 @@ export function MissionSlide({ onStartJourney }: MissionSlideProps) {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
             >
               <h3 className="font-display text-5xl text-borcelle-red mb-4">01.</h3>
-              <h4 className="text-xl font-bold text-borcelle-dark mb-3">Conceito Principal</h4>
-              <p className="text-zinc-600 leading-relaxed text-sm">
+              <h4 className="text-2xl font-bold text-borcelle-dark mb-3">Conceito Principal</h4>
+              <p className="text-zinc-600 leading-relaxed text-lg">
                 A NR 17 estabelece os parâmetros para a adaptação das condições de trabalho às características psicofisiológicas dos trabalhadores, visando segurança, conforto e desempenho.
               </p>
             </motion.div>
@@ -53,8 +53,8 @@ export function MissionSlide({ onStartJourney }: MissionSlideProps) {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
             >
               <h3 className="font-display text-5xl text-borcelle-red mb-4">02.</h3>
-              <h4 className="text-xl font-bold text-borcelle-dark mb-3">Aplicação Prática</h4>
-              <p className="text-zinc-600 leading-relaxed text-sm">
+              <h4 className="text-2xl font-bold text-borcelle-dark mb-3">Aplicação Prática</h4>
+              <p className="text-zinc-600 leading-relaxed text-lg">
                 Na confeitaria Bouche Nerveuse, a ergonomia busca otimizar as bancadas de preparo, os equipamentos e as posturas, evitando fadiga e lesões nos nossos talentosos confeiteiros.
               </p>
             </motion.div>
@@ -63,7 +63,7 @@ export function MissionSlide({ onStartJourney }: MissionSlideProps) {
         </div>
 
         <motion.p
-          className="text-sm font-medium tracking-widest text-zinc-400 mt-auto hidden md:block uppercase"
+          className="text-lg font-medium tracking-widest text-zinc-400 mt-auto hidden md:block uppercase"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}

@@ -58,7 +58,7 @@ export function ImagerySlide() {
           <h2 className="font-display text-5xl md:text-6xl text-borcelle-cream tracking-tight leading-none mb-4">
             Papel do <span className="text-borcelle-red">RH</span>
           </h2>
-          <div className="text-zinc-400 text-base font-medium max-w-2xl mt-2">
+          <div className="text-zinc-400 text-lg font-medium max-w-2xl mt-2">
             <p className="mb-3">O Setor de Recursos Humanos é protagonista na aplicação da NR 17:</p>
             <ul className="flex flex-col gap-2 pl-2">
               <li className="flex items-center gap-2">
@@ -96,8 +96,8 @@ export function ImagerySlide() {
             <div className="w-14 h-14 rounded-full bg-borcelle-red/10 flex items-center justify-center mb-6 border border-borcelle-red/20 group-hover:scale-110 transition-transform duration-500">
               {role.icon}
             </div>
-            <h3 className="text-xl font-bold text-borcelle-cream mb-4 group-hover:text-white transition-colors">{role.title}</h3>
-            <p className="text-zinc-400 leading-relaxed text-sm group-hover:text-zinc-300 transition-colors">
+            <h3 className="text-2xl font-bold text-borcelle-cream mb-4 group-hover:text-white transition-colors">{role.title}</h3>
+            <p className="text-zinc-400 leading-relaxed text-lg group-hover:text-zinc-300 transition-colors">
               {role.desc}
             </p>
           </motion.div>

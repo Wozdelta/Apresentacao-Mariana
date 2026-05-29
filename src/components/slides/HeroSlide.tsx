@@ -56,10 +56,10 @@ export function HeroSlide() {
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
         className="flex flex-col md:flex-row justify-between items-end text-borcelle-cream w-full z-10 gap-8"
       >
-        <p className="text-sm font-medium tracking-widest hidden md:block uppercase leading-relaxed">
+        <p className="text-lg font-medium tracking-widest hidden md:block uppercase leading-relaxed">
           José Milton<br />Kaiky Leão
         </p>
-        <p className="md:w-1/2 text-sm md:text-base leading-relaxed font-medium">
+        <p className="md:w-1/2 text-lg md:text-xl leading-relaxed font-medium">
           Docente: Mariana Beneli<br />
           Bem-vindos à nossa apresentação. Hoje abordaremos a NR 17 (Ergonomia) aplicada à realidade da nossa empresa.
         </p>
